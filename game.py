@@ -6,7 +6,6 @@ class Game:
     def __init__(self, screen):
         self.screen = screen
 
-
     def game_loop(self):
 
         while True:
