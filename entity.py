@@ -16,4 +16,4 @@ class Entity:
             self.moves.pop(0).move()
 
     def show(self, screen):
-        screen.blit(screen, (self.x, self.y))
+        screen.blit(self.sprite, (self.x, self.y))
