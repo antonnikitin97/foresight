@@ -28,7 +28,19 @@ class Game:
             self.screen.fill(0)
             self.player.show(self.screen)
             pygame.display.flip()
-            
+
+            if self.player.x <= self.player.move_to_x:
+                self.player.x += 0.5
+
+            if self.player.x >= self.player.move_to_x:
+                self.player.x -= 0.5
+
+            if self.player.y <= self.player.move_to_y:
+                self.player.y += 0.5
+
+            if self.player.y >= self.player.move_to_y:
+                self.player.y -= 0.5
+
             for event in pygame.event.get():
                 if event.type == KEYDOWN:
                     if event.key == K_DOWN or event.key == K_UP or event.key == K_LEFT or event.key == K_RIGHT:
@@ -36,6 +48,6 @@ class Game:
                     if event.key == K_RETURN and self.is_moving:
                         self.is_moving = False
                         self.player.move(diff_x, diff_y)
-                        diff_x, diff_y = 0, 0 # Reset the differences after each move
+                        diff_x, diff_y = 0, 0  # Reset the differences after each move
                 if event.type == QUIT:
                     quit(-10)

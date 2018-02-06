@@ -9,6 +9,8 @@ class Entity:
         self.spritelist = spritelist
         self.spriteindex = spriteindex
         self.sprite = spritelist[spriteindex]
+        self.move_to_x = 0  # These variables represent where the player *should be*
+        self.move_to_y = 0
 
     def move(self, diffx, diffy, backlog=1):
         self.moves.append(Move(diffx, diffy, self))
